@@ -1,7 +1,7 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
-
+require("dotenv").config();
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
 
@@ -9,7 +9,6 @@ const db = require("./config/connection");
 
 // The following code is no longer needed in Grapql setup
 // const routes = require('./routes');
-// app.use(routes);
 
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
